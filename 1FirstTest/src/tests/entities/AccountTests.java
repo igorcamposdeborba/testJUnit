@@ -59,7 +59,7 @@ public class AccountTests {
 	}
 	
 	@Test
-	public void withdrawShouldReturnAmountWhenPositiveAmount() {
+	public void withdrawShouldReturnAmountWhenSuficientBalance() {
 		// data
 		double initialBalance = 100.0;
 		double expectedValue = 40.0;
@@ -71,6 +71,15 @@ public class AccountTests {
 		
 		// result
 		Assertions.assertEquals(acc.getBalance(), expectedValue);
-		
 	}
+	
+	@Test
+	public void withdrawShouldThrowExceptionWhenInsuficientBalance() {
+		IllegalArgumentException error = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			Account acc = AccountFactory.createAccount(800.0);
+			acc.withdraw(1000.0);
+		}, "You don't permit withdraw a amount greather than your balance");
+		Assertions.assertEquals("You don't permit withdraw a amount greather than your balance", error.getMessage());
+	}
+	
 }
