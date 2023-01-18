@@ -22,4 +22,20 @@ public class AccountTests {
 		// 3) ASSERT: resultado esperado
 		Assertions.assertEquals(expectedValue, acc.getBalance());
 	}
+	
+	// Teste com Exception
+	@Test
+	public void depositShouldNothingWhenNegativeAmount() {
+		// Data
+		double amount = -1.0;
+		double expectedValue = 100.0;
+		Account acc = new Account(1L, expectedValue);
+				
+		// Do and Result
+		IllegalArgumentException error = Assertions.assertThrowsExactly(IllegalArgumentException.class, 
+				() -> { acc.deposit(amount); }, 
+				"The amount need be greather than zero");
+		Assertions.assertEquals("The amount need be greather than zero", error.getMessage());
+		
+	}
 }
