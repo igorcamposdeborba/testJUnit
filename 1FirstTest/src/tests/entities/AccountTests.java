@@ -40,6 +40,23 @@ public class AccountTests {
 				() -> { acc.deposit(amount); }, 
 				"The amount need be greather than zero");
 		Assertions.assertEquals("The amount need be greather than zero", error.getMessage());
+	}
+	
+	@Test
+	public void fullWithdrawShouldClearBalance() {
+		// data
+		double initialBalance = 100.0;
+		double expectedValue = 0.0;
+		Account acc = AccountFactory.createAccount(initialBalance);
+		
+		// do
+		double result = acc.fullWithdraw();
+		
+		// result
+		Assertions.assertEquals(initialBalance, result); // retornar o valor inicial de balance (antes de subtrair)
+		Assertions.assertTrue(expectedValue == acc.getBalance()); // get no valor atualizado de balance
+		// Assertions.assertTrue(expectedValue == result); // alternativa com assertTrue
 		
 	}
+	
 }

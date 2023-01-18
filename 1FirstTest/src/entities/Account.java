@@ -42,11 +42,11 @@ public class Account {
 		balance -= amount;
 	}
 	
-	public Double fillWithdraw() {
-		if (balance == 0) { 
+	public double fullWithdraw() {
+		if (balance <= 0) { 
 			throw new IllegalArgumentException("You don't have positive balance");
 		}
-		Double varBalance = balance;
+		double varBalance = balance;
 		balance = 0.0;
 		return varBalance;
 	}
