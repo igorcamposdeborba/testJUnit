@@ -55,7 +55,7 @@ public class AccountTests {
 		// result
 		Assertions.assertEquals(initialBalance, result); // retornar o valor inicial de balance (antes de subtrair)
 		Assertions.assertTrue(expectedValue == acc.getBalance()); // get no valor atualizado de balance
-		// Assertions.assertTrue(expectedValue == result); // alternativa com assertTrue
+		// Assertions.assertTrue(initialBalance == result); // alternativa com assertTrue
 		
 	}
 	
