@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import entities.Account;
+import tests.factory.AccountFactory;
 
 public class AccountTests {
 	
@@ -14,7 +15,8 @@ public class AccountTests {
 		double amount = 200.00;
 		double expectedValue = 196.00;
 		
-		Account acc = new Account(1L, 0.0);
+		Account acc = AccountFactory.createEmptyAccount(); // factory design pattern simple
+		// Account acc = new Account(1L, 0.0);
 		
 		// 2) ACT: executar as ações
 		acc.deposit(amount);
@@ -29,8 +31,10 @@ public class AccountTests {
 		// Data
 		double amount = -1.0;
 		double expectedValue = 100.0;
-		Account acc = new Account(1L, expectedValue);
-				
+		Account acc = AccountFactory.createAccount(expectedValue); // factory design pattern simple
+		//Account acc = new Account(1L, expectedValue);
+		
+		
 		// Do and Result
 		IllegalArgumentException error = Assertions.assertThrowsExactly(IllegalArgumentException.class, 
 				() -> { acc.deposit(amount); }, 
