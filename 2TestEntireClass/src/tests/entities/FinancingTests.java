@@ -101,6 +101,7 @@ public class FinancingTests {
 	}
 	
 	// setIncome Deve lançar IllegalArgumentException quando os dados não forem válidos
+	@Test
 	public void setIncomeShouldThrowExceptionWhenInvalidData() {
 		// 1) ARRANGE
 		Double totalAmount = 100000.0;
@@ -120,6 +121,7 @@ public class FinancingTests {
 	}
 	
 	// setMonths Deve atualizar o valor quando os dados forem válidos
+	@Test
 	public void setMonthsShouldUpdateWhenDataIsValid() {
 		// 1) ARRANGE
 		Double totalAmount = 100000.0;
@@ -137,6 +139,7 @@ public class FinancingTests {
 	}
 	
 	// setMonths Deve lançar IllegalArgumentException quando os dados não forem válidos
+	@Test
 	public void setMonthsShouldThrowExceptionWhenDataInvalid() {
 		// 1) ARRANGE
 		Double totalAmount = 100000.0;
@@ -155,6 +158,7 @@ public class FinancingTests {
 	}
 	
 	// entry Deve calcular corretamente o valor da entrada
+	@Test
 	public void entryShouldCalculateInput() {
 		// 1) ARRANGE
 		Double totalAmount = 100000.0;
@@ -162,16 +166,17 @@ public class FinancingTests {
 		Integer months = 80;
 		Financing installments = FinancingFactory.createFinancing(totalAmount, income, months);
 		
-		double ExpectedTotalAmount = 80000.0;
+		double ExpectedTotalAmount = 20000.0;
 		
 		// 2) ACT
-		installments.entry();
+		double result = installments.entry();
 		
 		// 3) ASSERT
-		Assertions.assertTrue(ExpectedTotalAmount == installments.getTotalAmount());
+		Assertions.assertEquals(ExpectedTotalAmount, result);
 	}
 	
 	// quota Deve calcular corretamente o valor da prestação
+	@Test
 	public void quotaShouldCalculateInstallment() {
 		// 1) ARRANGE
 		Double totalAmount = 100000.0;
