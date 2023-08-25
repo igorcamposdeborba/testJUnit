@@ -35,7 +35,7 @@ public class LocacaoServiceTest {
 	}
 	// Should When Then
 	@Test
-	public void filmWithoutStockShouldThrowsExceptionWhenFilmStorageIsZeroThenMustApproveThisTest() throws LocadoraException {
+	public void filmWithoutStock_ShouldThrowsException_WhenFilmStorageIsZero_ThenMustApproveThisTest() throws LocadoraException {
 		//cenario
 		LocacaoService service = new LocacaoService();
 		Usuario usuario = new Usuario("Usuario 1");
