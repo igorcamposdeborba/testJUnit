@@ -33,9 +33,9 @@ public class LocacaoServiceTest {
 		Assert.assertTrue(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)));
 		
 	}
-	
+	// Should When Then
 	@Test
-	public void testLocacao_filmeSemEstoque_2() throws LocadoraException {
+	public void filmWithoutStockShouldThrowsExceptionWhenFilmStorageIsZeroThenMustApproveThisTest() throws LocadoraException {
 		//cenario
 		LocacaoService service = new LocacaoService();
 		Usuario usuario = new Usuario("Usuario 1");
