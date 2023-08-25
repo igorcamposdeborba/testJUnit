@@ -36,13 +36,13 @@ public class LocacaoServiceTest {
 	// Should When Then
 	@Test
 	public void filmWithoutStock_ShouldThrowsException_WhenFilmStorageIsZero_ThenMustApproveThisTest() throws LocadoraException {
-		//cenario
+		// Arrange
 		LocacaoService service = new LocacaoService();
 		Usuario usuario = new Usuario("Usuario 1");
 		// Filme filme = new Filme("Filme 2", 2, 4.0); // Forçando rodar no teste porque o teste é verificar se a exception de sem estoque funciona. Mas estou instanciando com estoque.
 		Filme filme = new Filme("Filme 2", 0, 4.0); 
 		
-		//acao
+		// Act and Assert
 		try {
 			service.alugarFilme(usuario, filme); // O caminho correto dessa exception é rodar dentro da classe que tem a exception e pular para o catch que verifica se a mensagem está correta
 			Assert.fail("Deveria ter lancado uma excecao"); // Sempre colocar um Assert.fail porque se não cair na exception da classe, vai cair nessa assertion de erro
