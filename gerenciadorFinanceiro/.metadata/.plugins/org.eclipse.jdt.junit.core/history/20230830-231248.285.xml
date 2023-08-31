@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserTest.nullFields_ShouldThrowsValidationException_WhenParameterAreNull_ThenDisplaysMessage" project="gerenciadorFinanceiro" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.iborba.gerenciadorFinanceiro.domain.UserTest" time="0.011" displayname="UserTest" uniqueid="[engine:junit-jupiter]/[class:br.com.iborba.gerenciadorFinanceiro.domain.UserTest]">
+    <testcase name="nullFields_ShouldThrowsValidationException_WhenParameterAreNull_ThenDisplaysMessage" classname="br.com.iborba.gerenciadorFinanceiro.domain.UserTest" time="0.011" displayname="nullFields_ShouldThrowsValidationException_WhenParameterAreNull_ThenDisplaysMessage()" uniqueid="[engine:junit-jupiter]/[class:br.com.iborba.gerenciadorFinanceiro.domain.UserTest]/[method:nullFields_ShouldThrowsValidationException_WhenParameterAreNull_ThenDisplaysMessage()]"/>
+  </testsuite>
+</testrun>

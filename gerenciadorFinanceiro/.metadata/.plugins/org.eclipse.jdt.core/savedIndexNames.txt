@@ -1,0 +1,11 @@
+INDEX VERSION 1.134+C:\Exercicios\Cod3r\JUnit\TestesUnitariosJUnit5\gerenciadorFinanceiro\.metadata\.plugins\org.eclipse.jdt.core
+3874462074.index
+1076749856.index
+2979132515.index
+1865797976.index
+4131383692.index
+335563473.index
+1677397460.index
+3508390881.index
+1167275426.index
+4092792594.index

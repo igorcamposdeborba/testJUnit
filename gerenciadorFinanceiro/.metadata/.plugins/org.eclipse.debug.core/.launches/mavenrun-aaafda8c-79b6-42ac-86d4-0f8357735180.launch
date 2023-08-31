@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.m2e.Maven2LaunchConfigurationType">
+    <booleanAttribute key="M2_BATCH" value="false"/>
+    <stringAttribute key="M2_GOALS" value="-U archetype:generate"/>
+    <listAttribute key="M2_PROPERTIES">
+        <listEntry value="archetypeGroupId=uk.co.markg.archetypes"/>
+        <listEntry value="archetypeArtifactId=java11-junit5"/>
+        <listEntry value="archetypeVersion=1.0"/>
+        <listEntry value="groupId=br.com.iborba"/>
+        <listEntry value="artifactId=gerenciadorFinanceiro"/>
+        <listEntry value="version=0.0.1-SNAPSHOT"/>
+        <listEntry value="package=br.com.iborba.gerenciadorFinanceiro"/>
+        <listEntry value="outputDirectory=C:\Exercicios\Cod3r\JUnit\TestesUnitariosJUnit5\gerenciadorFinanceiro"/>
+    </listAttribute>
+    <booleanAttribute key="M2_SAVE_BEFORE_LAUNCH" value="false"/>
+    <booleanAttribute key="org.eclipse.debug.ui.private" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\Users\igor_\AppData\Local\Temp\m2e-archetypeGenerator11932948826478531797"/>
+</launchConfiguration>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;gerenciadorFinanceiro&apos;&#x0D;&#x0A;- Original project: &apos;gerenciadorFinanceiro&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     br.com.iborba.gerenciadorFinanceiro.App.java&#x0D;&#x0A;     br.com.iborba.gerenciadorFinanceiro.AppTest.java" description="Delete elements" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;br.com.iborba.gerenciadorFinanceiro{App.java" element2="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;br.com.iborba.gerenciadorFinanceiro{AppTest.java" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1693449006877" subPackages="false" version="1.0"/>
+</session>

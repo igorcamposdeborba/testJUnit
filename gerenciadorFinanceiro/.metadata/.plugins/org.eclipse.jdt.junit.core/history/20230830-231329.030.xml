@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserTest" project="gerenciadorFinanceiro" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.iborba.gerenciadorFinanceiro.domain.UserTest" time="0.013" displayname="UserTest" uniqueid="[engine:junit-jupiter]/[class:br.com.iborba.gerenciadorFinanceiro.domain.UserTest]">
+    <testcase name="createUser_ShouldInstantiateClass_WhenParametersAreFilled" classname="br.com.iborba.gerenciadorFinanceiro.domain.UserTest" time="0.011" displayname="createUser_ShouldInstantiateClass_WhenParametersAreFilled()" uniqueid="[engine:junit-jupiter]/[class:br.com.iborba.gerenciadorFinanceiro.domain.UserTest]/[method:createUser_ShouldInstantiateClass_WhenParametersAreFilled()]"/>
+    <testcase name="nullFields_ShouldThrowsValidationException_WhenParameterAreNull_ThenDisplaysMessage" classname="br.com.iborba.gerenciadorFinanceiro.domain.UserTest" time="0.001" displayname="nullFields_ShouldThrowsValidationException_WhenParameterAreNull_ThenDisplaysMessage()" uniqueid="[engine:junit-jupiter]/[class:br.com.iborba.gerenciadorFinanceiro.domain.UserTest]/[method:nullFields_ShouldThrowsValidationException_WhenParameterAreNull_ThenDisplaysMessage()]"/>
+  </testsuite>
+</testrun>
