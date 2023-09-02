@@ -1,8 +1,5 @@
 package br.com.iborba.gerenciadorFinanceiro.domain;
 
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -27,13 +24,14 @@ class UserTest {
 				() -> Assertions.assertEquals(0L, user1.getId()),
 				() -> Assertions.assertEquals("Igor Borba", user1.getName()),
 				() -> Assertions.assertEquals("igor@hotmail.com", user1.getEmail()),
-				() -> Assertions.assertEquals("123456", user1.getPassword())
+				() -> Assertions.assertEquals("123456", user1.getPassword()),
+				() -> Assertions.assertEquals(user1, new User(id, name, email, password))
 				);
 	}
 	
 	// ! Como validar vários campos com a mesma exception, mas mudando a mensagem.
 	@Test
-	void nullFields_ShouldThrowsValidationException_WhenParameterAreNull_ThenDisplaysMessage() throws ValidationException {
+	void nullFieldsUser_ShouldThrowsValidationException_WhenParameterAreNull_ThenDisplaysMessage() throws ValidationException {
 		// Arrange
 		Long idNull = null,
 			   idFilled = 0L;
@@ -46,7 +44,7 @@ class UserTest {
 		
 		
 		// Assert
-		ValidationException nameException = Assertions.assertThrows(ValidationException.class, () -> new User(idNull, nameNull, emailFilled, passwordFilled), 
+		ValidationException nameException = Assertions.assertThrows(ValidationException.class, () -> new User(idNull, nameNull, emailNull, passwordFilled), 
 				"Review parameters and class's processing because should throw a Exception");
 		ValidationException emailException = Assertions.assertThrows(ValidationException.class, () -> new User(idFilled, nameFilled, emailNull, passwordFilled),
 				"Review parameters and class's processing because should throw a Exception");
@@ -60,7 +58,7 @@ class UserTest {
 	
 	// Como fazer assertAll com assertThrows para validar uma ou várias exceptions
 	@Test
-	void EmptyFields_ShouldThrowsValidationException_WhenParameterAreEmpty_ThenDisplaysMessage() throws ValidationException {
+	void EmptyFieldsUser_ShouldThrowsValidationException_WhenParameterAreEmpty_ThenDisplaysMessage() throws ValidationException {
 		// Arrange
 		Long id = null;
 		String name = "", 
