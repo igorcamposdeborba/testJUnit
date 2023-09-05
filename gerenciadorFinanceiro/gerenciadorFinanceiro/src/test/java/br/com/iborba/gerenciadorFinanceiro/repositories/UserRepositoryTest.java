@@ -37,8 +37,7 @@ public class UserRepositoryTest  {
 		// Assert		
 		Assertions.assertThrows(ValidationException.class, () -> {
 			userService.saveUser(new User(null, "Igor Borba", "igor_campos5@hotmail.com", "123456"));
-			userService.saveUser(new User(null, "Igor Borba", "igor_campos5@hotmail.com", "123456"));
-		});
+		}, "Usuario igor_campos5@hotmail.com ja cadastrado");
 	}
 	
 	
