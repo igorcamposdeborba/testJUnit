@@ -57,5 +57,7 @@ public class UserServiceTest {
 		
 		// Assert
 		Assertions.assertTrue(user.isPresent());
+		Mockito.verify(userRepository).getUserByEmail("igor@hotmail.com"); // validar valor do mock processado
+		Mockito.verify(userRepository, Mockito.times(1)).getUserByEmail("igor@hotmail.com"); // validar o número de vezes que o mock foi chamado (1 vez)
 	}
 }
