@@ -36,4 +36,25 @@ public class AccountServiceTest {
 		Mockito.verify(accountRepository).getAccountByName("Abc123NomeDaConta");
 		Mockito.verify(accountRepository).saveAccount(accountSaved);		
 	}
+	
+	@Test
+	void accountNameExistsInDatabase_ShouldReturnAccount_WhenAccountServiceMethodGetAccountByNameIsCalled() throws ValidationException {
+		// Arrange
+		AccountRepository accountRepository = Mockito.mock(AccountRepository.class);
+		AccountService accountService = new AccountService(accountRepository);
+		User user = new User(null, "Igor Borba", "igor@hotmail.com", "123456");
+		
+		
+		// Define behaviors of Mockito
+		Mockito.when(accountRepository.getAccountByName("Abc123NomeDaConta"))
+			.thenReturn(Optional.of(new Account(null, "Abc123NomeDaConta", user))); // Long id, String name, User user
+		
+		// Act
+		Optional<Account> account = accountService.getAccountByName("Abc123NomeDaConta");
+		
+		// Assert
+		Assertions.assertTrue(account.isPresent());
+		Mockito.verify(accountRepository).getAccountByName("Abc123NomeDaConta");
+			
+	}
 }
