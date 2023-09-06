@@ -20,7 +20,7 @@ public class UserService {
 		// Executar consulta
 		// Obter o usuário salvo no banco de dados
 		Optional<User> userDataBase = userRepository.getUserByEmail(user.getEmail());
-		if (!userDataBase.isEmpty()) {
+		if ( !userDataBase.isEmpty()) {
 			throw new ValidationException(String.format("Usuario %s ja cadastrado", userDataBase.get().getEmail()));
 		}
 		

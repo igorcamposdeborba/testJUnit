@@ -62,7 +62,7 @@ public class UserServiceTest {
 	}
 	
 	@Test // Testar dois métodos
-	void userValid_ShouldSaveUserSuccessfully_WhenUserServiceMethodsaveUserIsCalled() throws ValidationException {
+	void userValid_ShouldSaveUserSuccessfully_WhenUserServiceMethodSaveUserIsCalled() throws ValidationException {
 		// Arrange
 		UserRepository userRepository = Mockito.mock(UserRepository.class); // Criar objeto da classe UserRepository mockado com Mockito
 		UserService userService = new UserService(userRepository);
