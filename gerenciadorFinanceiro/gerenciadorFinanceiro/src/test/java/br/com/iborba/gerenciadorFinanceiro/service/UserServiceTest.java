@@ -25,7 +25,7 @@ public class UserServiceTest {
 		Assertions.assertTrue(user.isEmpty());
 	}
 	
-	@Test
+	@Test // Teste básico com Mockito
 	void emailNoExistsInDatabase_ShouldReturnUserEmpty_WhenUserServiceMethodGetUserByEmailIsCalled() throws ValidationException {
 		// Arrange
 		UserRepository userRepository = Mockito.mock(UserRepository.class); // Criar objeto da classe UserRepository mockado com Mockito
@@ -42,7 +42,7 @@ public class UserServiceTest {
 		Assertions.assertTrue(user.isEmpty());
 	}
 	
-	@Test
+	@Test // Teste básico com Mockito e validando o número de vezes que o mock é chamado
 	void emailExistsInDatabase_ShouldReturnUser_WhenUserServiceMethodGetUserByEmailIsCalled() throws ValidationException {
 		// Arrange
 		UserRepository userRepository = Mockito.mock(UserRepository.class); // Criar objeto da classe UserRepository mockado com Mockito
@@ -61,7 +61,7 @@ public class UserServiceTest {
 		Mockito.verify(userRepository, Mockito.times(1)).getUserByEmail("igor@hotmail.com"); // validar o número de vezes que o mock foi chamado (1 vez)
 	}
 	
-	@Test
+	@Test // Testar dois métodos
 	void userValid_ShouldSaveUserSuccessfully_WhenUserServiceMethodsaveUserIsCalled() throws ValidationException {
 		// Arrange
 		UserRepository userRepository = Mockito.mock(UserRepository.class); // Criar objeto da classe UserRepository mockado com Mockito
@@ -73,7 +73,7 @@ public class UserServiceTest {
 		   									.thenReturn(Optional.empty()); // comportamento que eu pré-defini
 		
 		Mockito.when(userRepository.saveUser(user))
-											.thenReturn(user); // comportamento que eu pré-defini
+											.thenReturn(user);
 		
 		// Act
 		User userSaved = userService.saveUser(user);
@@ -82,5 +82,19 @@ public class UserServiceTest {
 		Assertions.assertNotNull(user);
 		Mockito.verify(userRepository).getUserByEmail("andressa@hotmail.com"); // validar valor do mock processado
 		Mockito.verify(userRepository).saveUser(user);
+	}
+	
+	@Test // Testar exception
+	void emailInDatabase_ShouldThrowValidationException_WhenUserServiceMethodSaveUserIsCalled() throws ValidationException {
+		// Arrange
+		UserRepository userRepository = Mockito.mock(UserRepository.class); // Criar objeto da classe UserRepository mockado com Mockito
+		UserService userService = new UserService(userRepository);
+		User user = new User(null, "Igor Borba", "igor@hotmail.com", "123456");
+		
+		// Act and Assert
+		Mockito.when(userRepository.getUserByEmail(user.getEmail()))
+										.thenReturn(Optional.of(user));
+
+		Assertions.assertThrows(ValidationException.class, () -> userService.saveUser(user), "Usuario igor@hotmail.com ja cadastrado");
 	}
 }
